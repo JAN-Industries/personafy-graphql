@@ -1,10 +1,19 @@
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
-import { readFileSync } from "fs";
 import { books, users } from "./datasources/mock";
 import { getUser } from "./auth/user";
+import { loadFilesSync } from "@graphql-tools/load-files";
+import { mergeTypeDefs } from "@graphql-tools/merge";
+import path from "path";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
 
-const typeDefs = readFileSync("./schema.graphql", { encoding: "utf-8" });
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const typesArray = loadFilesSync(path.join(__dirname, "./schema/*.graphql"));
+const typeDefs = mergeTypeDefs(typesArray);
+
 
 const resolvers = {
 	Query: {

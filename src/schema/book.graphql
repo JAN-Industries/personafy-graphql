@@ -1,0 +1,12 @@
+type Book {
+	title: String
+	author: String
+	date: String
+}
+
+type AddBookMutationResponse {
+	code: String!
+	success: Boolean!
+	message: String!
+	book: Book
+}
