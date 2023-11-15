@@ -1,0 +1,4 @@
+type GPTQueryResponse {
+	content: String
+	error: String
+}

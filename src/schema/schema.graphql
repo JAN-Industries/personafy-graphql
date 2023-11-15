@@ -2,6 +2,7 @@ type Query {
 	books: [Book]
 	users: [User]
 	user(id: ID!): User
+	askGPT(question: String): GPTQueryResponse
 }
 
 type Mutation {
