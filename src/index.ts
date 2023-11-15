@@ -12,6 +12,19 @@ const resolvers = {
 		users: () => users,
 		user: (_: unknown, { id }) => users.find((user) => String(user.id) === id),
 	},
+	Mutation: {
+		addBook: (_: unknown, { title, author }) => {
+			const book = { title, author, date: new Date().toDateString() };
+			books.push(book);
+
+			return {
+				code: "200",
+				success: true,
+				message: "Book added successfully",
+				book,
+			};
+		},
+	},
 };
 
 // The ApolloServer constructor requires two parameters: your schema

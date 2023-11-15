@@ -1,4 +1,4 @@
-export const books = [
+export let books = [
 	{
 		title: "The Awakening",
 		author: "Kate Chopin",
@@ -11,7 +11,7 @@ export const books = [
 	},
 ];
 
-export const users = [
+export let users = [
 	{
 		id: 1,
 		name: "John Doe",
