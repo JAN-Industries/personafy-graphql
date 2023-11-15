@@ -11,4 +11,19 @@ export const books = [
 	},
 ];
 
-export const users = [];
+export const users = [
+	{
+		id: 1,
+		name: "John Doe",
+		email: "john.doe@email.com",
+		username: "john.doe",
+		books: [books[0]],
+	},
+	{
+		id: 2,
+		name: "Joe Doe",
+		email: "Joe.doe@email.com",
+		username: "joe.doe",
+		books: [books[1]],
+	},
+];

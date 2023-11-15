@@ -1,7 +1,7 @@
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
 import { readFileSync } from "fs";
-import { books } from "./datasources/mock";
+import { books, users } from "./datasources/mock";
 import { getUser } from "./auth/user";
 
 const typeDefs = readFileSync("./schema.graphql", { encoding: "utf-8" });
@@ -9,6 +9,8 @@ const typeDefs = readFileSync("./schema.graphql", { encoding: "utf-8" });
 const resolvers = {
 	Query: {
 		books: () => books,
+		users: () => users,
+		user: (_: unknown, { id }) => users.find((user) => String(user.id) === id),
 	},
 };
 
