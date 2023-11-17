@@ -14,16 +14,21 @@ export let books = [
 export let users = [
 	{
 		id: 1,
-		name: "John Doe",
-		email: "john.doe@email.com",
-		username: "john.doe",
-		books: [books[0]],
+		email: "jon.snow@email.com",
+		username: "ghost_gang",
+		profile: {
+			id: 1,
+			firstName: "Jon",
+			lastName: "Snow",
+			age: 20,
+			occupation: "Student",
+			education: "University of Winterfell",
+			about: "I know nothing",
+		},
 	},
 	{
 		id: 2,
-		name: "Joe Doe",
 		email: "Joe.doe@email.com",
 		username: "joe.doe",
-		books: [books[1]],
 	},
 ];

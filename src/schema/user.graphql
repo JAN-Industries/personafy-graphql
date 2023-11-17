@@ -2,5 +2,21 @@ type User {
 	id: ID!
 	username: String
 	email: String
-	books: [Book]
+	profile: Profile
+}
+
+type Profile {
+	id: ID!
+	firstName: String
+	lastName: String
+	age: Int
+	occupation: String
+	education: String
+	about: String
+}
+
+type Education {
+	university: String
+	highest_degree: String
+	degree_name: String
 }

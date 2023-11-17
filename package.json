@@ -21,6 +21,9 @@
 		"openai": "^4.19.0"
 	},
 	"devDependencies": {
+		"@graphql-codegen/cli": "^5.0.0",
+		"@graphql-codegen/typescript": "^4.0.1",
+		"@graphql-codegen/typescript-resolvers": "^4.0.1",
 		"@types/node": "^20.9.1",
 		"nodemon": "^3.0.1",
 		"ts-node": "^10.9.1",

@@ -2,19 +2,9 @@ import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
 import { books, users } from "./datasources/mock";
 import { getUser } from "./auth/user";
-import { loadFilesSync } from "@graphql-tools/load-files";
-import { mergeTypeDefs } from "@graphql-tools/merge";
-import path from "path";
-import { fileURLToPath } from "url";
-import { dirname } from "path";
 import OpenAI from "openai";
 import "dotenv/config";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const typesArray = loadFilesSync(path.join(__dirname, "./schema/*.graphql"));
-const typeDefs = mergeTypeDefs(typesArray);
+import typeDefs from "./schema";
 
 const resolvers = {
 	Query: {
