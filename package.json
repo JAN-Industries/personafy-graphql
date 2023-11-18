@@ -6,7 +6,8 @@
 	"scripts": {
 		"compile": "tsc",
 		"start": "npm run compile && node ./dist/index.js",
-		"dev": "nodemon -x node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm --watch src --watch schema.graphql --ext ts,js,graphql src/index.ts"
+		"dev": "nodemon -x node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm --watch src --watch schema.graphql --ext ts,js,graphql src/index.ts",
+		"codegen": "graphql-codegen --config codegen.ts"
 	},
 	"keywords": [],
 	"author": "",
