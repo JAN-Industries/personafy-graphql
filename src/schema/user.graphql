@@ -13,21 +13,23 @@ type Profile {
 	occupation: String
 	education: String
 	about: String
-	employmentExperiences: [EmploymentExperience!]
+	employment: [EmploymentExperience!]
+	projects: [Project!]
 }
 
 type Education {
 	university: String
-	highest_degree: String
-	degree_name: String
+	highestDegree: String
+	degreeName: String
 }
 
 type EmploymentExperience {
+	id: ID!
 	company: String!
 	position: String!
 	description: String
-	start_date: String
-	end_date: String
+	startDate: String
+	endDate: String
 }
 
 type Project {
@@ -35,6 +37,6 @@ type Project {
 	name: String!
 	link: String
 	description: String
-	start_date: String
-	end_date: String
+	startDate: String
+	endDate: String
 }

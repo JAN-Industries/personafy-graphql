@@ -1,3 +1,5 @@
+import { User } from "../types/generated";
+
 export let books = [
 	{
 		title: "The Awakening",
@@ -11,23 +13,50 @@ export let books = [
 	},
 ];
 
-export let users = [
+export let users: User[] = [
 	{
-		id: 1,
+		id: "1",
 		email: "jon.snow@email.com",
 		username: "ghost_gang",
 		profile: {
-			id: 1,
+			id: "1",
 			firstName: "Jon",
 			lastName: "Snow",
 			age: 20,
 			occupation: "Student",
 			education: "University of Winterfell",
 			about: "I know nothing",
+			employment: [
+				{
+					id: "1",
+					company: "Night's Watch",
+					position: "Lord Commander",
+					description: "Protected the realm from the dead and wildlings",
+					startDate: new Date("11/01/1273").toDateString(),
+					endDate: "Until death",
+				},
+				{
+					id: "2",
+					company: "King in the North",
+					position: "King",
+					description: "King in the North",
+					startDate: new Date("11/01/1273").toDateString(),
+					endDate: new Date("5/01/1274").toDateString(),
+				},
+			],
+			projects: [
+				{
+					id: "1",
+					name: "New sword",
+					description: "I need a new sword",
+					startDate: new Date("11/01/1273").toDateString(),
+					endDate: new Date("11/01/1273").toDateString(),
+				},
+			],
 		},
 	},
 	{
-		id: 2,
+		id: "2",
 		email: "Joe.doe@email.com",
 		username: "joe.doe",
 	},
