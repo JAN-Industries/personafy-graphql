@@ -13,10 +13,19 @@ type Profile {
 	occupation: String
 	education: String
 	about: String
+	employmentExperiences: [EmploymentExperience!]
 }
 
 type Education {
 	university: String
 	highest_degree: String
 	degree_name: String
+}
+
+type EmploymentExperience {
+	company: String!
+	position: String!
+	description: String
+	start_date: String
+	end_date: String
 }
