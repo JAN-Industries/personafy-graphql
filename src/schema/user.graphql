@@ -29,3 +29,12 @@ type EmploymentExperience {
 	start_date: String
 	end_date: String
 }
+
+type Project {
+	id: ID!
+	name: String!
+	link: String
+	description: String
+	start_date: String
+	end_date: String
+}
