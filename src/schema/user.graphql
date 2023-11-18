@@ -10,17 +10,19 @@ type Profile {
 	firstName: String
 	lastName: String
 	age: Int
-	occupation: String
-	education: String
 	about: String
+	occupation: String
+	education: [Education!]
 	employment: [EmploymentExperience!]
 	projects: [Project!]
 }
 
 type Education {
-	university: String
-	highestDegree: String
-	degreeName: String
+	school: String!
+	degreeLevel: String
+	fieldOfStudy: String
+	startDate: String
+	endDate: String
 }
 
 type EmploymentExperience {

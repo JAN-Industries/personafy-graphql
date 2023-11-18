@@ -24,8 +24,16 @@ export let users: User[] = [
 			lastName: "Snow",
 			age: 20,
 			occupation: "Student",
-			education: "University of Winterfell",
 			about: "I know nothing",
+			education: [
+				{
+					school: "University of Winterfell",
+					degreeLevel: "Bachelors",
+					fieldOfStudy: "Computer Science",
+					startDate: new Date("11/01/1273").toDateString(),
+					endDate: new Date("11/01/1277").toDateString(),
+				},
+			],
 			employment: [
 				{
 					id: "1",
