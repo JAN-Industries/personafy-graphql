@@ -1,12 +1,12 @@
 {
-	"name": "chatgpme-graphql",
+	"name": "personafy-graphql",
 	"version": "1.0.0",
 	"description": "",
-	"main": "index.js",
+	"main": "index.ts",
 	"scripts": {
 		"compile": "tsc",
 		"start": "npm run codegen && npm run compile && node ./dist/index.js",
-		"dev": "npm run codegen && nodemon -x node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm --watch src --watch schema.graphql --ext ts,js,graphql src/index.ts",
+		"dev": "npm run codegen && nodemon -x node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm --watch src --ext ts,js,graphql src/index.ts",
 		"codegen": "graphql-codegen --config codegen.ts"
 	},
 	"keywords": [],
