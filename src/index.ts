@@ -3,6 +3,10 @@ import { startStandaloneServer } from "@apollo/server/standalone";
 import { books, users } from "./datasources/mock";
 import { getUser } from "./auth/user";
 import OpenAI from "openai";
+import {
+	resolvers as scalarResolvers,
+	typeDefs as scalarTypeDefs,
+} from "graphql-scalars";
 import "dotenv/config";
 import typeDefs from "./schema";
 
@@ -48,8 +52,11 @@ const resolvers = {
 // The ApolloServer constructor requires two parameters: your schema
 // definition and your set of resolvers.
 const server = new ApolloServer({
-	typeDefs,
-	resolvers,
+	typeDefs: [...scalarTypeDefs, typeDefs],
+	resolvers: {
+		...scalarResolvers,
+		...resolvers,
+	},
 });
 
 // Passing an ApolloServer instance to the `startStandaloneServer` function:

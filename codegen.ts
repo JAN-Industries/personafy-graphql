@@ -7,6 +7,12 @@ const config: CodegenConfig = {
 	generates: {
 		"src/types/generated.ts": {
 			plugins: ["typescript", "typescript-resolvers"],
+			config: {
+				scalars: {
+					EmailAddress: "string",
+					DateTime: "string",
+				},
+			},
 		},
 	},
 };
