@@ -1,9 +1,7 @@
 import { decode } from "next-auth/jwt";
 import "dotenv/config";
 
-export async function getUser(sessionToken) {
-
-	console.log("sessionToken", sessionToken);
+export async function getUser(sessionToken: string) {
 	try {
 		// Verify the token
 		const decodedToken = await decode({
@@ -12,7 +10,6 @@ export async function getUser(sessionToken) {
 		});
 
 		if (!decodedToken) return null;
-		if (typeof decodedToken === "string") return null;
 		// Retrieve the user's information
 		const user = {
 			id: decodedToken.sub,
