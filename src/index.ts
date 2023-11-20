@@ -71,12 +71,13 @@ const { url } = await startStandaloneServer(server, {
 
 	// For `startStandaloneServer`, the `req` and `res` objects are
 	// `http.IncomingMessage` and `http.ServerResponse` types.
-	context: async ({ req, res }) => {
+	context: async ({ req }) => {
 		// Get the user token from the headers.
-		const token = req.headers.authorization || "";
+		const sessionToken = req.headers.authorization || "";
 
 		// Try to retrieve a user with the token
-		const user = await getUser(token);
+		const user = await getUser(sessionToken);
+		console.log("user", user);
 
 		// Add the user to the context
 		return { user };

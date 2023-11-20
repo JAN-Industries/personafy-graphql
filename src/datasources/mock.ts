@@ -27,6 +27,7 @@ export let users: User[] = [
 			about: "I know nothing",
 			education: [
 				{
+					id: "1",
 					school: "University of Winterfell",
 					degreeLevel: "Bachelors",
 					fieldOfStudy: "Computer Science",

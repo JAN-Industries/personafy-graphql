@@ -1,11 +1,26 @@
-export const getUser = async (token) => {
-	if (token)
-		return {
-			id: 1,
-			name: "John Doe",
-			email: "",
+import { decode } from "next-auth/jwt";
+import "dotenv/config";
+
+export async function getUser(sessionToken) {
+	try {
+		// Verify the token
+		const decodedToken = await decode({
+			token: sessionToken.split(" ")[1],
+			secret: process.env.NEXTAUTH_SECRET,
+		});
+
+		if (!decodedToken) return null;
+		if (typeof decodedToken === "string") return null;
+		// Retrieve the user's information
+		const user = {
+			id: decodedToken.sub,
+			name: decodedToken.name,
+			email: decodedToken.email,
+			image: decodedToken.picture,
 		};
-	else {
+		return user;
+	} catch (err) {
+		console.error("Failed to authenticate user:", err);
 		return null;
 	}
-};
+}
