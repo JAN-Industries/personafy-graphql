@@ -18,6 +18,7 @@ type Profile {
 }
 
 type Education {
+	id: ID!
 	school: String!
 	degreeLevel: String
 	fieldOfStudy: String
