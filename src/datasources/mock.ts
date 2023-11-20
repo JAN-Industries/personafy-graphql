@@ -69,4 +69,47 @@ export let users: User[] = [
 		email: "Joe.doe@email.com",
 		username: "joe.doe",
 	},
+	{
+		id: "35301702",
+		email: "nolangelinas@gmail.com",
+		username: "nrgbistro",
+		profile: {
+			id: "3",
+			firstName: "Nolan",
+			lastName: "Ang",
+			age: 20,
+			occupation: "Student",
+			about:
+				"I'm a student at Duke University studying Computer Science and ECE. I'm also the CEO of nrgworx, a company that I founded in 2020.",
+			education: [
+				{
+					id: "3",
+					school: "University of Waterloo",
+					degreeLevel: "Bachelors",
+					fieldOfStudy: "Computer Science",
+					startDate: new Date("09/01/2019").toDateString(),
+					endDate: new Date("04/01/2024").toDateString(),
+				},
+			],
+			employment: [
+				{
+					id: "3",
+					company: "nrgworx",
+					position: "CEO",
+					description: "I am the CEO of nrgworx",
+					startDate: new Date("11/01/2020").toDateString(),
+					endDate: "Until death",
+				},
+			],
+			projects: [
+				{
+					id: "4",
+					name: "NRGBistro",
+					description: "I need a new sword",
+					startDate: new Date("11/01/2020").toDateString(),
+					endDate: new Date("11/01/2020").toDateString(),
+				},
+			],
+		},
+	},
 ];

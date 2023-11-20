@@ -2,6 +2,8 @@ import { decode } from "next-auth/jwt";
 import "dotenv/config";
 
 export async function getUser(sessionToken) {
+
+	console.log("sessionToken", sessionToken);
 	try {
 		// Verify the token
 		const decodedToken = await decode({

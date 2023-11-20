@@ -14,7 +14,10 @@ const resolvers = {
 	Query: {
 		books: () => books,
 		users: () => users,
-		user: (_: unknown, { id }) => users.find((user) => String(user.id) === id),
+		user: (_: unknown, __: unknown, context: any) => {
+			console.log("context", context);
+			return users.find((user) => String(user.id) === context.user.id);
+		},
 		askGPT: async (_: unknown, { question }) => {
 			const openai = new OpenAI({
 				apiKey: process.env["OPENAI_API_KEY"],
