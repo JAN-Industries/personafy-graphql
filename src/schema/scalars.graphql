@@ -1,2 +1,4 @@
 scalar EmailAddress
 scalar DateTime
+scalar DateOrString
+scalar URL

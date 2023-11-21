@@ -5,8 +5,10 @@ const queryResolvers = {
 	books: () => books,
 	users: () => users,
 	user: (_: unknown, __: unknown, context: any) => {
-		console.log("context", context);
-		return users.find((user) => String(user.id) === context.user.id);
+		const user = users.find((user) => String(user.id) === context.user.id);
+		if (!user) return null;
+		user.image = context.user.image;
+		return user;
 	},
 	askGPT: async (_: unknown, { question }) => {
 		const openai = new OpenAI({

@@ -2,13 +2,14 @@ type User {
 	id: ID!
 	username: String
 	email: EmailAddress
+	firstName: String
+	lastName: String
+	image: String
 	profile: Profile
 }
 
 type Profile {
 	id: ID!
-	firstName: String
-	lastName: String
 	age: Int
 	about: String
 	occupation: String
@@ -22,8 +23,8 @@ type Education {
 	school: String!
 	degreeLevel: String
 	fieldOfStudy: String
-	startDate: String
-	endDate: String
+	startDate: DateOrString
+	endDate: DateOrString
 }
 
 type EmploymentExperience {
@@ -31,15 +32,15 @@ type EmploymentExperience {
 	company: String!
 	position: String!
 	description: String
-	startDate: String
-	endDate: String
+	startDate: DateOrString
+	endDate: DateOrString
 }
 
 type Project {
 	id: ID!
 	name: String!
-	link: String
+	link: URL
 	description: String
-	startDate: String
-	endDate: String
+	startDate: DateOrString
+	endDate: DateOrString
 }

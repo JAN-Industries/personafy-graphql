@@ -21,7 +21,8 @@ const { url } = await startStandaloneServer(server, {
 	listen: { port: 4000 },
 	context: async ({ req }) => {
 		const sessionToken = req.headers.authorization || "";
-		const user = await getUser(sessionToken);
+		const user = await getUser(sessionToken.replace("Bearer ", ""));
+		// console.log("user", user);
 		return { user };
 	},
 });

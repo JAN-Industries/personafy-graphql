@@ -10,7 +10,10 @@ const config: CodegenConfig = {
 			config: {
 				scalars: {
 					EmailAddress: "string",
-					DateTime: "string",
+					DateTime: "Date",
+					Date: "Date",
+					DateOrString: "Date | string",
+					URL: "string",
 				},
 			},
 		},
