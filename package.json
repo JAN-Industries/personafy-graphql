@@ -16,21 +16,21 @@
 	"dependencies": {
 		"@apollo/server": "^4.9.5",
 		"@graphql-tools/load-files": "^7.0.0",
-		"@graphql-tools/merge": "^9.0.0",
+		"@graphql-tools/merge": "^9.0.1",
 		"dotenv": "^16.3.1",
 		"graphql": "^16.8.1",
 		"graphql-scalars": "^1.22.4",
 		"next-auth": "^4.24.5",
-		"openai": "^4.19.0"
+		"openai": "^4.24.1"
 	},
 	"devDependencies": {
 		"@graphql-codegen/cli": "^5.0.0",
 		"@graphql-codegen/typescript": "^4.0.1",
 		"@graphql-codegen/typescript-resolvers": "^4.0.1",
 		"@types/jsonwebtoken": "^9.0.5",
-		"@types/node": "^20.9.1",
-		"nodemon": "^3.0.1",
-		"ts-node": "^10.9.1",
-		"typescript": "^5.2.2"
+		"@types/node": "^20.10.5",
+		"nodemon": "^3.0.2",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.3.3"
 	}
 }
