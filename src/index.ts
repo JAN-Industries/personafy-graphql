@@ -9,12 +9,19 @@ import {
 } from "graphql-scalars";
 import "dotenv/config";
 import typeDefs from "./schema";
+import { GraphQLError } from "graphql";
+import { User } from "./types/generated";
 
 const resolvers = {
 	Query: {
 		books: () => books,
 		users: () => users,
-		user: (_: unknown, { id }) => users.find((user) => String(user.id) === id),
+		user: (_: unknown, __: unknown, { user }: { user: User }) => {
+			if (!user) {
+				return null;
+			}
+			return users.find((u) => String(u.id) === user.id);
+		},
 		askGPT: async (_: unknown, { question }) => {
 			const openai = new OpenAI({
 				apiKey: process.env["OPENAI_API_KEY"],
@@ -74,6 +81,8 @@ const { url } = await startStandaloneServer(server, {
 	context: async ({ req }) => {
 		// Get the user token from the headers.
 		const sessionToken = req.headers.authorization || "";
+
+		// console.log("sessionToken", sessionToken);
 
 		// Try to retrieve a user with the token
 		const user = await getUser(sessionToken);

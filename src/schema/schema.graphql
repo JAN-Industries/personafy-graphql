@@ -1,7 +1,7 @@
 type Query {
 	books: [Book]
 	users: [User]
-	user(id: ID!): User
+	user: User
 	askGPT(question: String): GPTQueryResponse
 }
 

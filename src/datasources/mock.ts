@@ -69,4 +69,24 @@ export let users: User[] = [
 		email: "Joe.doe@email.com",
 		username: "joe.doe",
 	},
+	{
+		id: "35301702",
+		email: "nolangelinas@gmail.com",
+		username: "nrgbistro",
+		profile: {
+			id: "2",
+			firstName: "Nolan",
+			lastName: "Gelinas",
+			education: [
+				{
+					id: "2",
+					school: "University of California, Berkeley",
+					degreeLevel: "Bachelors",
+					fieldOfStudy: "Computer Science",
+					startDate: new Date("11/01/2017").toDateString(),
+					endDate: new Date("11/01/2021").toDateString(),
+				},
+			],
+		},
+	},
 ];
