@@ -70,7 +70,7 @@ const { url } = await startStandaloneServer(server, {
 	context: async ({ req }) => {
 		const sessionToken = req.headers.authorization || "";
 
-		// console.log("sessionToken", sessionToken);
+		console.log("sessionToken", sessionToken);
 
 		// Try to retrieve a user with the token
 		const user = await getUser(sessionToken);
