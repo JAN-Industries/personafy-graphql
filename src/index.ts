@@ -9,7 +9,6 @@ import {
 } from "graphql-scalars";
 import "dotenv/config";
 import typeDefs from "./schema";
-import { GraphQLError } from "graphql";
 import { User } from "./types/generated";
 
 const resolvers = {
